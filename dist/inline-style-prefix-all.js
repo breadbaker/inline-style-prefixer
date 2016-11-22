@@ -70,7 +70,7 @@
     var isPrefixedValue = (function (value) {
       if (Array.isArray(value)) value = value.join(',');
 
-      return value.match(/-webkit-|-moz-|-ms-/) !== null;
+      return value.match(/-webkit-|-ms-/) !== null;
     });
 
     function calc(property, value) {
@@ -164,7 +164,7 @@
 
         var outputValue = prefixValue(value);
         var webkitOutput = outputValue.split(/,(?![^()]*(?:\([^()]*\))?\))/g).filter(function (value) {
-          return value.match(/-moz-|-ms-/) === null;
+          return value.match(/-ms-/) === null;
         }).join(',');
 
         // if the property is already prefixed
